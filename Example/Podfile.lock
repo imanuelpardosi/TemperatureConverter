@@ -1,0 +1,16 @@
+PODS:
+  - TemperatureConverter (1.0.0)
+
+DEPENDENCIES:
+  - TemperatureConverter (from `../TemperatureConverter/`)
+
+EXTERNAL SOURCES:
+  TemperatureConverter:
+    :path: ../TemperatureConverter/
+
+SPEC CHECKSUMS:
+  TemperatureConverter: d1fb14429cc941409b72fcc10161ad5e86789227
+
+PODFILE CHECKSUM: 59f60b8a1541c5d2ad98243cd64b0b58926c99f1
+
+COCOAPODS: 1.4.0
