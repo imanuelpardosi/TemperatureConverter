@@ -34,31 +34,31 @@ public class TemperatureConverter {
     
     public var fahrenheit: Double {
         if _from == .celsius {
-            return (_value * 9/5) + 32
+            return ((_value * 9/5) + 32).rounded(toPlaces: 2)
         } else if _from == .kelvin {
-            return (_value - 273.15) * 9/5 + 32
+            return ((_value - 273.15) * 9/5 + 32).rounded(toPlaces: 2)
         } else {
-            return _value
+            return _value.rounded(toPlaces: 2)
         }
     }
     
     public var celsius: Double {
         if _from == .fahrenheit {
-            return (_value - 32) * 5/9
+            return ((_value - 32) * 5/9).rounded(toPlaces: 2)
         } else if _from == .kelvin {
-            return _value - 273.15
+            return (_value - 273.15).rounded(toPlaces: 2)
         } else {
-            return _value
+            return _value.rounded(toPlaces: 2)
         }
     }
     
     public var kelvin: Double {
         if _from == .fahrenheit {
-            return (_value - 32) * 5/9 + 273.15
+            return ((_value - 32) * 5/9 + 273.15).rounded(toPlaces: 2)
         } else if _from == .celsius {
-            return _value + 273.15
+            return (_value + 273.15).rounded(toPlaces: 2)
         } else {
-            return _value
+            return _value.rounded(toPlaces: 2)
         }
     }
     
@@ -83,6 +83,13 @@ public class TemperatureConverter {
                 newValue = value - 273.15
             }
         }
-        return newValue
+        return newValue.rounded(toPlaces: 2)
+    }
+}
+
+extension Double {
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
 }

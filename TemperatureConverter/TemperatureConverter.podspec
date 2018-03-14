@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TemperatureConverter"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "An amazing framework that can easily convert temperatures."
 
   # This description is used to generate tags and improve search results.
